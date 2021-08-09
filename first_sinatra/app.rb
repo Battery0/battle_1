@@ -5,9 +5,17 @@ get '/' do
   "Hello World"
 end
 
-get '/cat' do
-  "<div style ='border: dashed red'>
-    <img src='https://i.imgur.com/jFaSxym.png'>
-  <div>"
+get '/hello' do
+  "Hellooooooooooooooooooooooooooooooo"
+end  
+
+get '/random-cat' do
+  @name = ["Amigo", "Misty", "Almond"].sample
+  erb(:index)
 end
 
+get '/named-cat' do
+  p params
+  @name = params[:name]
+  erb(:index)
+end  
